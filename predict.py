@@ -40,12 +40,12 @@ for i in range(itr):
         th = 0.6
         mark = mark[:, :, 1]
         # # 单CRF(仅linux
-        # mark = crf.CRFs(image, mark, tr_size)
+        mark = crf.CRFs(image, mark, tr_size)
         # # CRF + 闭开
-        # mark = morph(mark, operation='co', vary=True, th=th)
+        mark = morph(mark, operation='co', vary=True, th=th)
         #############################
         # # 形态学开闭
-        # res_mor_oc = morph(mark, operation='oc', vary=True, th=th)    # 结果不好
+        res_mor_oc = morph(mark, operation='oc', vary=True, th=th)    # 结果不好
         # #############################
         # # 形态学闭开
         res_mor_co = morph(mark, operation='co', vary=True, th=th)
